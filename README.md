@@ -64,12 +64,20 @@ pnpm build
 
 `dist` 폴더에 정적 파일이 생성됩니다.
 
+
 ### 6. GitHub Pages 배포
 
 ```bash
 pnpm run deploy
 ```
-위 명령은 `my-pwa` 디렉터리에서 실행합니다. `pnpm deploy` 대신 `pnpm run deploy`를 사용하세요. 스크립트는 빌드 후 자동으로 `gh-pages` 브랜치에 결과를 푸시합니다. 이미 브랜치가 존재해도 새 빌드가 덮어쓰므로 코드 수정 후에도 이 명령을 다시 실행하면 최신 페이지가 배포됩니다.
+위 명령은 `my-pwa` 디렉터리에서 실행합니다. `pnpm deploy` 대신 **`pnpm run deploy`**를 사용하세요. 스크립트는 빌드 후 `gh-pages` 브랜치를 자동으로 정리해 다시 배포할 수 있도록 합니다.
+만약 여전히 `fatal: a branch named 'gh-pages' already exists` 오류가 발생하면 아래 명령으로 남은 브랜치를 삭제한 뒤 다시 실행하세요.
+
+```bash
+git branch -D gh-pages
+git push origin --delete gh-pages # 원격 브랜치가 남은 경우
+```
+
 
 GitHub 저장소의 **Settings → Pages**에서 Source를 `gh-pages` 브랜치와 `/`(root) 폴더로 지정하세요. 페이지에 README만 보인다면 이 설정을 다시 확인합니다. 설정 후 잠시 기다리면 `https://YOUR_ID.github.io/messagesystem/` 주소에서 최신 PWA를 확인할 수 있습니다. 프로젝트의 `vite.config.js`에는 이미 `base: '/messagesystem/'`가 설정되어 있습니다.
 
@@ -78,7 +86,6 @@ GitHub 저장소의 **Settings → Pages**에서 Source를 `gh-pages` 브랜치�
 앱을 GitHub Pages에 배포한 뒤 브라우저에서 배포 주소를 열면 주소창 우측에 설치 아이콘이 표시됩니다(또는 브라우저 메뉴에서 **앱 설치**를 선택). 해당 버튼을 누르면 PWA가 바탕화면 또는 모바일 홈 화면에 추가됩니다. 설치 후 아이콘을 더블클릭하면 독립 실행형 창으로 문자 작성 웹 앱이 열립니다. 네트워크가 연결되지 않은 상태에서도 최근에 방문한 페이지는 캐시된 파일을 이용해 열 수 있습니다.
 
 ### 원격 변경 사항 적용하기
-
 
 GitHub 저장소의 코드가 수정된 경우 로컬 환경에서 다음 명령을 실행해 최신 코드를 가져올 수 있습니다.
 
