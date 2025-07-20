@@ -9,7 +9,6 @@ interface Props {
 export default function IssueSelector({ issues, selected, toggle }: Props) {
   return (
     <div className="bg-white p-6 rounded-lg shadow grid gap-3">
-
       {issues.map((issue) => (
         <label key={issue.id} className="flex items-center gap-2">
           <input
