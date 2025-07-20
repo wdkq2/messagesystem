@@ -20,7 +20,7 @@ export default function FavList({ onClose }: Props) {
           <div className="bg-black text-white px-4 py-2 rounded">복사되었습니다!</div>
         </div>
       )}
-      <aside className="bg-white p-4 rounded-lg shadow w-64 h-full overflow-y-auto space-y-3">
+      <aside className="bg-white p-4 rounded-lg shadow w-[32rem] h-full overflow-y-auto space-y-3">
 
       <div className="flex gap-2">
         <input
@@ -65,7 +65,6 @@ export default function FavList({ onClose }: Props) {
                   삭제
                 </button>
               </div>
-
               <pre className="whitespace-pre-wrap text-sm text-gray-700">
                 {it.content}
               </pre>

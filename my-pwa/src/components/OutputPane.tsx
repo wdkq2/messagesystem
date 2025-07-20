@@ -1,6 +1,5 @@
 import { useState } from 'react'
 
-
 interface Props {
   text: string
 }
@@ -33,6 +32,5 @@ export default function OutputPane({ text }: Props) {
         </pre>
       </div>
     </>
-
   )
 }
