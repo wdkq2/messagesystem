@@ -18,8 +18,23 @@ npm install -g pnpm
 cd my-pwa
 pnpm install
 ```
+### 3. API 키 설정
 
-### 3. 개발 서버 실행
+OpenAI API를 사용하려면 `my-pwa` 폴더에 `.env` 파일을 만들고 다음 값을 입력합니다. 이 파일은 Git에 커밋하지 마세요.
+
+```bash
+cp my-pwa/.env.example my-pwa/.env
+# .env 편집 후 API 키 입력
+```
+
+`.env` 내용 예시:
+
+```env
+VITE_OPENAI_KEY=sk-...
+VITE_OPENAI_MODEL=gpt-4o
+```
+
+### 4. 개발 서버 실행
 
 ```bash
 pnpm dev
@@ -27,7 +42,7 @@ pnpm dev
 
 브라우저에서 `http://localhost:5173` 주소를 열어 앱을 확인합니다.
 
-### 4. 빌드
+### 5. 빌드
 
 ```bash
 pnpm build
@@ -35,7 +50,7 @@ pnpm build
 
 `dist` 폴더에 정적 파일이 생성됩니다.
 
-### 5. GitHub Pages 배포
+### 6. GitHub Pages 배포
 
 ```bash
 pnpm deploy

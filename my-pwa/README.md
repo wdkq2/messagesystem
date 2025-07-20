@@ -18,11 +18,26 @@ If you are developing a production application, we recommend using TypeScript wi
    ```bash
    pnpm install
    ```
-2. 개발 서버 실행
+2. `.env` 파일 준비
+   ```bash
+   cp .env.example .env
+   # .env 파일을 열어 OpenAI API 키 입력
+   ```
+3. 개발 서버 실행
+
    ```bash
    pnpm dev
    ```
    브라우저에서 `http://localhost:5173` 를 열어 확인합니다.
+4. 프로덕션 빌드
+   ```bash
+   pnpm build
+   ```
+5. GitHub Pages 배포(선택)
+   ```bash
+   pnpm deploy
+   ```
+=======
 3. 프로덕션 빌드
    ```bash
    pnpm build
@@ -31,4 +46,3 @@ If you are developing a production application, we recommend using TypeScript wi
    ```bash
    pnpm deploy
    ```
-=======
