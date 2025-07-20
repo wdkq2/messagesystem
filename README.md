@@ -64,7 +64,6 @@ pnpm build
 
 `dist` 폴더에 정적 파일이 생성됩니다.
 
-
 ### 6. GitHub Pages 배포
 
 ```bash
@@ -80,6 +79,7 @@ GitHub 저장소의 **Settings → Pages**에서 Source를 `gh-pages` 브랜치�
 
 ### 원격 변경 사항 적용하기
 
+
 GitHub 저장소의 코드가 수정된 경우 로컬 환경에서 다음 명령을 실행해 최신 코드를 가져올 수 있습니다.
 
 ```bash
@@ -88,3 +88,4 @@ pnpm install # 의존성 변경 시
 ```
 
 작업 중이라면 `git stash`로 수정 사항을 임시 저장한 후 `git pull` 명령을 실행하세요.
+
