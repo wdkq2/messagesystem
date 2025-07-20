@@ -19,5 +19,6 @@ export default function OutputPane({ text }: Props) {
         {text}
       </pre>
     </div>
+
   )
 }

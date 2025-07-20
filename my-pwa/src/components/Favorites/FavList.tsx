@@ -1,6 +1,7 @@
 import { useFavorites } from '../../hooks/useFavorites'
 import { useState } from 'react'
 
+
 interface Props {
   onClose: () => void
 }
@@ -47,4 +48,5 @@ export default function FavList({ onClose }: Props) {
       )}
     </aside>
   )
+
 }
