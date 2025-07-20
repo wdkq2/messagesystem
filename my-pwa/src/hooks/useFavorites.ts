@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 export interface FavoriteItem {
   id: number
   name: string
-
   content: string
 }
 

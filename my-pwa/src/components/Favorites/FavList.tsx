@@ -1,5 +1,5 @@
 import { useFavorites } from '../../hooks/useFavorites'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 
 
@@ -13,10 +13,18 @@ export default function FavList({ onClose }: Props) {
     it.name.toLowerCase().includes(query.toLowerCase()),
   )
 
-  const modal = (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+  // prevent page scrolling while the modal is open
+  useEffect(() => {
+    document.body.classList.add('overflow-hidden')
+    return () => {
+      document.body.classList.remove('overflow-hidden')
+    }
+  }, [])
 
-      <div className="bg-white p-6 rounded-lg w-80 max-h-[80vh] overflow-y-auto">
+  const modal = (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white p-6 rounded-lg w-full max-w-md max-h-[80vh] overflow-y-auto shadow-lg">
+
         <div className="flex gap-2 mb-3">
           <input
             className="border p-1 flex-grow rounded"
@@ -54,5 +62,4 @@ export default function FavList({ onClose }: Props) {
   )
 
   return createPortal(modal, document.body)
-
 }
