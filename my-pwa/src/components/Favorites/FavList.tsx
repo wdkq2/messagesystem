@@ -11,6 +11,7 @@ export default function FavList() {
             {it.content}
           </pre>
         </li>
+
       ))}
     </ul>
   )

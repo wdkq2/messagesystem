@@ -4,6 +4,7 @@ import PromptBox from './components/PromptBox'
 import OutputPane from './components/OutputPane'
 import FavButton from './components/Favorites/FavButton'
 import FavList from './components/Favorites/FavList'
+
 import IssueEditor from './components/IssueEditor'
 import { FavoriteItem } from './hooks/useFavorites'
 import { useIssues } from './hooks/useIssues'
@@ -15,6 +16,7 @@ export default function App() {
   const [output, setOutput] = useState('')
   const [editing, setEditing] = useState(false)
   const [showFavs, setShowFavs] = useState(false)
+
   const { issues, addIssue, updateIssue } = useIssues()
 
   const toggle = (id: number) => {
@@ -29,7 +31,7 @@ export default function App() {
       .map((i) => i.content)
       .join('\n')
     const base =
-      '당신은 부동산 업자를 위해서 문자를 작성해주는 전문 글 작성자 입니다. 사용자는 부동산 이슈와 어떻게 글을 작성하면 될지 짧은 지침을 제공할 것입니다. 문자 메시지를 작성하고 제공하세요. 사용자는 복사-붙여넣기만 하면 되도록 다른 텍스트는 모두 배제하고 오직 문자 메시지만 제공하세요.'
+      '당신은 부동산 업자를 위해서 기존의 고객에게 광고 문자를 작성해주는 전문적인 광고문자 작성자 입니다. 사용자는 부동산 이슈와 어떻게 글을 작성하면 될지 짧은 지침을 제공할 것입니다. 사용자가 제공하는 프롬프트를 시간을 가지고 천천히 이해하세요. 해당 정보를 가지고 정성을 담은 콤팩트한 문자 메시지를 작성하세요. 사용자는 복사-붙여넣기만 하면 되도록 다른 텍스트는 모두 배제하고 오직 문자 메시지만 제공하세요.'
     const fullPrompt = `${base}\n#부동산 이슈 ${chosen}\n# 짧은 지침 ${prompt}`
     console.log(fullPrompt)
     try {
@@ -76,6 +78,7 @@ export default function App() {
         <FavButton item={favItem} />
       </div>
       {showFavs && <FavList />}
+
     </div>
   )
 }
