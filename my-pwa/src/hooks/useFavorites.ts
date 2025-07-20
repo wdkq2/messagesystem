@@ -44,3 +44,4 @@ export function useFavorites() {
 
   return { items, add, updateName, remove }
 }
+
