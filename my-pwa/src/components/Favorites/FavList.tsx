@@ -2,6 +2,7 @@ import { useFavorites } from '../../hooks/useFavorites'
 import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 
+
 interface Props {
   onClose: () => void
 }
@@ -23,6 +24,7 @@ export default function FavList({ onClose }: Props) {
   const modal = (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-white p-6 rounded-lg w-full max-w-md max-h-[80vh] overflow-y-auto shadow-lg">
+
         <div className="flex gap-2 mb-3">
           <input
             className="border p-1 flex-grow rounded"
