@@ -75,6 +75,7 @@ pnpm run deploy
 GitHub 저장소에서 **Settings → Pages**로 이동해 Source를 반드시 `gh-pages` 브랜치와 `/`(root) 폴더로 지정하세요. 만약 페이지에서 README만 보인다면 이 설정을 다시 확인하세요. 설정 후 잠시 기다리면 `https://YOUR_ID.github.io/messagesystem/` 주소에서 배포된 PWA를 확인할 수 있습니다.
 본 프로젝트의 `vite.config.js`에는 이미 `base: '/messagesystem/'`가 설정되어 있어 경로가 올바르게 처리됩니다.
 
+
 ### 7. 원격 변경 사항 적용
 
 GitHub 저장소의 코드가 수정된 경우 로컬 환경에서 다음 명령을 실행해 최신 코드를 가져올 수 있습니다.
