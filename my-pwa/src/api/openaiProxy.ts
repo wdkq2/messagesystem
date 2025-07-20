@@ -1,12 +1,12 @@
 export async function callOpenAI(prompt: string): Promise<string> {
-  const apiKey = import.meta.env.VITE_OPENAI_KEY
+  const url = import.meta.env.VITE_OPENAI_PROXY_URL
   const model = import.meta.env.VITE_OPENAI_MODEL ?? 'gpt-4o'
 
-  const resp = await fetch('https://api.openai.com/v1/chat/completions', {
+  const resp = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
+
     },
     body: JSON.stringify({
       model,

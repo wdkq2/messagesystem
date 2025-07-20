@@ -19,21 +19,24 @@ cd my-pwa
 pnpm install
 ```
 
-### 3. API 키 설정
+### 3. 프록시 URL 설정
 
-OpenAI API를 사용하려면 `my-pwa` 폴더에 `.env` 파일을 만들고 다음 값을 입력합니다. 이 파일은 Git에 커밋하지 마세요.
+OpenAI 키가 포함된 코드를 GitHub에 올리지 않도록, 브라우저에서는 프록시 URL을 통해 OpenAI API를 호출합니다. `my-pwa` 폴더에 `.env` 파일을 만든 뒤 아래 값을 입력하세요.
 
 ```bash
 cp my-pwa/.env.example my-pwa/.env
-# .env 편집 후 API 키 입력
+# .env 편집 후 프록시 주소 입력
 ```
 
-`.env` 내용 예시:
+`.env` 예시:
 
 ```env
-VITE_OPENAI_KEY=sk-...
+VITE_OPENAI_PROXY_URL=https://YOUR_WORKER.example.com/api/openai
 VITE_OPENAI_MODEL=gpt-4o
 ```
+
+Cloudflare Workers 등의 서버리스 환경에서 프록시를 구성해 API 키를 서버 환경 변수로 보관하면 안전하게 사용 가능합니다.
+
 
 ### 4. 개발 서버 실행
 
@@ -71,13 +74,19 @@ pnpm build
 pnpm run deploy
 ```
 위 명령은 `my-pwa` 디렉터리에서 실행합니다. `pnpm deploy` 대신 **`pnpm run deploy`**를 사용하세요. 스크립트는 빌드 후 `gh-pages` 브랜치를 자동으로 정리해 다시 배포할 수 있도록 합니다.
+배포 전에는 로컬 저장소에 GitHub 원격이 `origin` 이름으로 설정되어 있어야 합니다. 없다면 다음과 같이 추가하고 첫 푸시를 진행하세요.
+
+```bash
+git remote add origin https://github.com/YOUR_ID/messagesystem.git
+git push -u origin main
+```
+
 만약 여전히 `fatal: a branch named 'gh-pages' already exists` 오류가 발생하면 아래 명령으로 남은 브랜치를 삭제한 뒤 다시 실행하세요.
 
 ```bash
 git branch -D gh-pages
 git push origin --delete gh-pages # 원격 브랜치가 남은 경우
 ```
-
 
 GitHub 저장소의 **Settings → Pages**에서 Source를 `gh-pages` 브랜치와 `/`(root) 폴더로 지정하세요. 페이지에 README만 보인다면 이 설정을 다시 확인합니다. 설정 후 잠시 기다리면 `https://YOUR_ID.github.io/messagesystem/` 주소에서 최신 PWA를 확인할 수 있습니다. 프로젝트의 `vite.config.js`에는 이미 `base: '/messagesystem/'`가 설정되어 있습니다.
 

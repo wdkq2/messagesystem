@@ -22,7 +22,8 @@ If you are developing a production application, we recommend using TypeScript wi
 2. `.env` 파일 준비
    ```bash
    cp .env.example .env
-   # .env 파일을 열어 OpenAI API 키 입력
+   # .env 파일을 열어 프록시 URL 입력
+
    ```
 3. 개발 서버 실행
    ```bash
@@ -40,6 +41,13 @@ If you are developing a production application, we recommend using TypeScript wi
    위 명령은 프로젝트 루트(`my-pwa` 디렉터리)에서 실행해야 하며,
    `pnpm deploy` 대신 **`pnpm run deploy`** 를 사용합니다.
    스크립트는 이전 배포로 남아 있는 `gh-pages` 브랜치를 자동 정리한 뒤 결과물을 푸시합니다.
+   배포 전에는 로컬 저장소에 GitHub 원격이 `origin`으로 설정되어 있는지 확인하세요. 없다면 아래 명령으로 추가하고 첫 푸시를 수행합니다.
+
+   ```bash
+   git remote add origin https://github.com/YOUR_ID/messagesystem.git
+   git push -u origin main
+   ```
+
    만약 오류가 지속되면 다음 명령으로 브랜치를 삭제하세요.
 
    ```bash
