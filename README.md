@@ -18,7 +18,6 @@ npm install -g pnpm
 cd my-pwa
 pnpm install
 ```
-
 ### 3. API 키 설정
 
 OpenAI API를 사용하려면 `my-pwa` 폴더에 `.env` 파일을 만들고 다음 값을 입력합니다. 이 파일은 Git에 커밋하지 마세요.

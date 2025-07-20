@@ -32,6 +32,7 @@ export default function App() {
     console.log(fullPrompt)
     try {
       setOutput('작성 중입니다...')
+
       const message = await callOpenAI(fullPrompt)
       setOutput(message)
     } catch (e) {
