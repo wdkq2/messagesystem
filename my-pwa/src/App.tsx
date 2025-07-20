@@ -26,9 +26,13 @@ export default function App() {
       .filter((i) => selected.includes(i.id))
       .map((i) => i.content)
       .join('\n')
-    const fullPrompt = `${chosen}\n${prompt}`
+    const base =
+      '당신은 부동산 업자를 위해서 문자를 작성해주는 전문 글 작성자 입니다. 사용자는 부동산 이슈와 어떻게 글을 작성하면 될지 짧은 지침을 제공할 것입니다. 문자 메시지를 작성하고 제공하세요. 사용자는 복사-붙여넣기만 하면 되도록 다른 텍스트는 모두 배제하고 오직 문자 메시지만 제공하세요.'
+    const fullPrompt = `${base}\n#부동산 이슈 ${chosen}\n# 짧은 지침 ${prompt}`
     console.log(fullPrompt)
     try {
+      setOutput('작성 중입니다...')
+
       const message = await callOpenAI(fullPrompt)
       setOutput(message)
     } catch (e) {
@@ -53,7 +57,6 @@ export default function App() {
           {editing ? '닫기' : '이슈 편집'}
         </button>
       </header>
-
       {editing && (
         <IssueEditor issues={issues} onAdd={addIssue} onUpdate={updateIssue} />
       )}
@@ -63,7 +66,6 @@ export default function App() {
       <div className="text-right">
         <FavButton item={favItem} />
       </div>
-
     </div>
   )
 }

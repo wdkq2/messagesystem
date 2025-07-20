@@ -14,5 +14,4 @@ export default function FavButton({ item }: Props) {
       ★ 저장
     </button>
   )
-
 }

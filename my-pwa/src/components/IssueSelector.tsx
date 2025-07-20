@@ -18,7 +18,6 @@ export default function IssueSelector({ issues, selected, toggle }: Props) {
             onChange={() => toggle(issue.id)}
           />
           <span>{issue.title}</span>
-
         </label>
       ))}
     </div>
