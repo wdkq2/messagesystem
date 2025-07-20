@@ -3,14 +3,19 @@ import IssueSelector from './components/IssueSelector'
 import PromptBox from './components/PromptBox'
 import OutputPane from './components/OutputPane'
 import FavButton from './components/Favorites/FavButton'
+import IssueEditor from './components/IssueEditor'
 import { FavoriteItem } from './hooks/useFavorites'
-import issues from './data/issueList.json'
+import { useIssues } from './hooks/useIssues'
+
 import { callOpenAI } from './api/openaiProxy'
 
 export default function App() {
   const [selected, setSelected] = useState<number[]>([])
   const [prompt, setPrompt] = useState('')
   const [output, setOutput] = useState('')
+  const [editing, setEditing] = useState(false)
+  const { issues, addIssue, updateIssue } = useIssues()
+
 
   const toggle = (id: number) => {
     setSelected((prev) =>
@@ -41,7 +46,14 @@ export default function App() {
 
   return (
     <div>
-      <IssueSelector selected={selected} toggle={toggle} />
+      <button onClick={() => setEditing(!editing)}>
+        {editing ? '닫기' : '이슈 편집'}
+      </button>
+      {editing && (
+        <IssueEditor issues={issues} onAdd={addIssue} onUpdate={updateIssue} />
+      )}
+      <IssueSelector issues={issues} selected={selected} toggle={toggle} />
+
       <PromptBox value={prompt} onChange={setPrompt} onSubmit={handleSubmit} />
       <OutputPane text={output} />
       <FavButton item={favItem} />
