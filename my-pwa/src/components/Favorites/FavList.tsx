@@ -8,6 +8,7 @@ export default function FavList({ onClose }: Props) {
   const { items, updateName, remove } = useFavorites()
   const [query, setQuery] = useState('')
   const [copied, setCopied] = useState(false)
+
   const filtered = items.filter((it) =>
     it.name.toLowerCase().includes(query.toLowerCase()),
   )
@@ -20,6 +21,7 @@ export default function FavList({ onClose }: Props) {
         </div>
       )}
       <aside className="bg-white p-4 rounded-lg shadow w-[32rem] h-full overflow-y-auto space-y-3">
+
       <div className="flex gap-2">
         <input
           className="border p-1 flex-grow rounded"
@@ -73,4 +75,5 @@ export default function FavList({ onClose }: Props) {
       </aside>
     </>
   )
+
 }
