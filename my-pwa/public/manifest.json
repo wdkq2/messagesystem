@@ -3,5 +3,15 @@
   "short_name": "PWA",
   "start_url": "/",
   "scope": "./",
-  "icons": []
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+
 }
