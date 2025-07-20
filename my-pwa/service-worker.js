@@ -1,9 +1,11 @@
 const CACHE = 'v1'
+const PREFIX = '/messagesystem'
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/vite.svg',
+  `${PREFIX}/`,
+  `${PREFIX}/index.html`,
+  `${PREFIX}/manifest.json`,
+  `${PREFIX}/vite.svg`,
+
 ]
 
 self.addEventListener('install', (e) => {
@@ -28,4 +30,3 @@ self.addEventListener('fetch', (e) => {
     )
   }
 })
-

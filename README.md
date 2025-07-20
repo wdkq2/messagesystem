@@ -67,10 +67,14 @@ pnpm build
 ### 6. GitHub Pages 배포
 
 ```bash
-pnpm deploy
+pnpm run deploy
 ```
+위 명령은 `my-pwa` 디렉터리에서 실행하며 `pnpm deploy`가 아닌
+`pnpm run deploy`를 사용해야 합니다.
 
-`gh-pages` 브랜치로 빌드 결과가 업로드되며, GitHub Pages 설정에서 해당 브랜치를 배포 대상으로 지정하면 됩니다.
+빌드 결과는 자동으로 `gh-pages` 브랜치에 올라갑니다. GitHub 저장소에서 **Settings → Pages**로 이동해 Source를 `gh-pages` 브랜치와 `/`(root) 폴더로 지정하세요. 잠시 후 `https://YOUR_ID.github.io/messagesystem/` 주소에서 배포된 PWA를 확인할 수 있습니다.
+본 프로젝트의 `vite.config.js`에는 이미 `base: '/messagesystem/'`가 설정되어 있어 경로가 올바르게 처리됩니다.
+
 
 ### 7. 원격 변경 사항 적용
 

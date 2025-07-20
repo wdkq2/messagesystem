@@ -35,5 +35,7 @@ If you are developing a production application, we recommend using TypeScript wi
    ```
 5. GitHub Pages 배포(선택)
    ```bash
-   pnpm deploy
+   pnpm run deploy
    ```
+   위 명령은 프로젝트 루트(`my-pwa` 디렉터리)에서 실행해야 하며,
+   `pnpm deploy` 대신 **`pnpm run deploy`** 를 사용해야 합니다.
