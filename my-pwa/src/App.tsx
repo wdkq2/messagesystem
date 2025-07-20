@@ -6,6 +6,7 @@ import FavButton from './components/Favorites/FavButton'
 import IssueEditor from './components/IssueEditor'
 import { FavoriteItem } from './hooks/useFavorites'
 import { useIssues } from './hooks/useIssues'
+
 import { callOpenAI } from './api/openaiProxy'
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
   const [output, setOutput] = useState('')
   const [editing, setEditing] = useState(false)
   const { issues, addIssue, updateIssue } = useIssues()
+
 
   const toggle = (id: number) => {
     setSelected((prev) =>
@@ -51,6 +53,7 @@ export default function App() {
         <IssueEditor issues={issues} onAdd={addIssue} onUpdate={updateIssue} />
       )}
       <IssueSelector issues={issues} selected={selected} toggle={toggle} />
+
       <PromptBox value={prompt} onChange={setPrompt} onSubmit={handleSubmit} />
       <OutputPane text={output} />
       <FavButton item={favItem} />
