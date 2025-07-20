@@ -5,7 +5,6 @@ const ASSETS = [
   `${PREFIX}/index.html`,
   `${PREFIX}/manifest.json`,
   `${PREFIX}/vite.svg`,
-
 ]
 
 self.addEventListener('install', (e) => {

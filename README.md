@@ -70,9 +70,9 @@ pnpm build
 pnpm run deploy
 ```
 위 명령은 `my-pwa` 디렉터리에서 실행하며 `pnpm deploy`가 아닌
-`pnpm run deploy`를 사용해야 합니다.
+`pnpm run deploy`를 사용해야 합니다. 스크립트가 빌드 후 자동으로 `gh-pages` 브랜치에 결과를 푸시합니다.
 
-빌드 결과는 자동으로 `gh-pages` 브랜치에 올라갑니다. GitHub 저장소에서 **Settings → Pages**로 이동해 Source를 `gh-pages` 브랜치와 `/`(root) 폴더로 지정하세요. 잠시 후 `https://YOUR_ID.github.io/messagesystem/` 주소에서 배포된 PWA를 확인할 수 있습니다.
+GitHub 저장소에서 **Settings → Pages**로 이동해 Source를 반드시 `gh-pages` 브랜치와 `/`(root) 폴더로 지정하세요. 만약 페이지에서 README만 보인다면 이 설정을 다시 확인하세요. 설정 후 잠시 기다리면 `https://YOUR_ID.github.io/messagesystem/` 주소에서 배포된 PWA를 확인할 수 있습니다.
 본 프로젝트의 `vite.config.js`에는 이미 `base: '/messagesystem/'`가 설정되어 있어 경로가 올바르게 처리됩니다.
 
 
@@ -94,4 +94,3 @@ pnpm install # 의존성 변경 시
 PWA가 바탕화면 또는 모바일 홈 화면에 추가됩니다. 설치 후 아이콘을 더블클릭하면
 독립 실행형 창으로 문자 작성 웹 앱이 열립니다. 네트워크가 연결되지 않은 상태에서도
 최근에 방문한 페이지는 캐시된 파일을 이용해 열 수 있습니다.
-

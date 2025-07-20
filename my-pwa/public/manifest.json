@@ -3,17 +3,14 @@
   "short_name": "PWA",
   "start_url": "/messagesystem/",
   "scope": "/messagesystem/",
-
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "icons": [
     {
       "src": "vite.svg",
-
       "sizes": "any",
       "type": "image/svg+xml"
     }
   ]
-
 }

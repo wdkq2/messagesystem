@@ -73,5 +73,4 @@ export default function FavList({ onClose }: Props) {
       </aside>
     </>
   )
-
 }
