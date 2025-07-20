@@ -36,5 +36,12 @@ export function useFavorites() {
     store.setItem('list', next)
   }
 
-  return { items, add, updateName }
+  const remove = (id: number) => {
+    const next = items.filter((it) => it.id !== id)
+    setItems(next)
+    store.setItem('list', next)
+  }
+
+  return { items, add, updateName, remove }
+
 }
