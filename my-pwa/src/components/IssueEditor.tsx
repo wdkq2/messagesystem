@@ -19,32 +19,45 @@ export default function IssueEditor({ issues, onAdd, onUpdate }: Props) {
   }
 
   return (
-    <div>
-      <h3>이슈 관리</h3>
-      <div>
+    <div className="bg-white p-4 rounded shadow">
+      <h3 className="text-lg font-semibold mb-2">이슈 관리</h3>
+      <div className="flex flex-col gap-2 mb-4">
         <input
+          className="border p-2 rounded"
+
           placeholder="제목"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <textarea
+          className="border p-2 rounded"
+
           rows={2}
           placeholder="내용"
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
-        <button onClick={handleAdd}>추가</button>
+        <button
+          className="self-start px-3 py-1 rounded bg-blue-600 text-white"
+          onClick={handleAdd}
+        >
+          추가
+        </button>
       </div>
-      <ul>
+      <ul className="space-y-2">
         {issues.map((issue) => (
-          <li key={issue.id} style={{ marginTop: '0.5em' }}>
+          <li key={issue.id} className="flex flex-col gap-1">
             <input
+              className="border p-1 rounded"
+
               value={issue.title}
               onChange={(e) =>
                 onUpdate({ ...issue, title: e.target.value })
               }
             />
             <textarea
+              className="border p-1 rounded"
+
               rows={2}
               value={issue.content}
               onChange={(e) =>

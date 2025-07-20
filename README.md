@@ -63,3 +63,15 @@ pnpm deploy
 ```
 
 `gh-pages` 브랜치로 빌드 결과가 업로드되며, GitHub Pages 설정에서 해당 브랜치를 배포 대상으로 지정하면 됩니다.
+
+### 7. 원격 변경 사항 적용
+
+GitHub 저장소의 코드가 수정된 경우 로컬 환경에서 다음 명령을 실행해 최신 코드를 가져올 수 있습니다.
+
+```bash
+git pull origin main
+pnpm install # 의존성 변경 시
+```
+
+작업 중이라면 `git stash` 로 수정 사항을 임시 저장한 후 `git pull` 명령을 실행하세요.
+

@@ -25,7 +25,6 @@ If you are developing a production application, we recommend using TypeScript wi
    # .env 파일을 열어 OpenAI API 키 입력
    ```
 3. 개발 서버 실행
-
    ```bash
    pnpm dev
    ```
