@@ -37,6 +37,7 @@ VITE_OPENAI_MODEL=gpt-4o
 
 Cloudflare Workers 등의 서버리스 환경에서 프록시를 구성해 API 키를 서버 환경 변수로 보관하면 안전하게 사용 가능합니다.
 
+
 ### 4. 개발 서버 실행
 
 ```bash
@@ -79,6 +80,7 @@ pnpm run deploy
 git remote add origin https://github.com/YOUR_ID/messagesystem.git
 git push -u origin main
 ```
+
 만약 여전히 `fatal: a branch named 'gh-pages' already exists` 오류가 발생하면 아래 명령으로 남은 브랜치를 삭제한 뒤 다시 실행하세요.
 
 ```bash
@@ -102,3 +104,4 @@ pnpm install # 의존성 변경 시
 ```
 
 작업 중이라면 `git stash`로 수정 사항을 임시 저장한 후 `git pull` 명령을 실행하세요.
+

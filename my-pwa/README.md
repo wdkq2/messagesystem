@@ -23,6 +23,7 @@ If you are developing a production application, we recommend using TypeScript wi
    ```bash
    cp .env.example .env
    # .env 파일을 열어 프록시 URL 입력
+
    ```
 3. 개발 서버 실행
    ```bash
@@ -46,6 +47,7 @@ If you are developing a production application, we recommend using TypeScript wi
    git remote add origin https://github.com/YOUR_ID/messagesystem.git
    git push -u origin main
    ```
+
    만약 오류가 지속되면 다음 명령으로 브랜치를 삭제하세요.
 
    ```bash
