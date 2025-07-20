@@ -53,6 +53,7 @@ export default function App() {
           {editing ? '닫기' : '이슈 편집'}
         </button>
       </header>
+
       {editing && (
         <IssueEditor issues={issues} onAdd={addIssue} onUpdate={updateIssue} />
       )}
@@ -62,6 +63,7 @@ export default function App() {
       <div className="text-right">
         <FavButton item={favItem} />
       </div>
+
     </div>
   )
 }

@@ -7,5 +7,6 @@ export default function OutputPane({ text }: Props) {
     <pre className="bg-white p-4 rounded shadow whitespace-pre-wrap min-h-[6rem]">
       {text}
     </pre>
+
   )
 }

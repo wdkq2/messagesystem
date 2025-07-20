@@ -24,12 +24,14 @@ export default function IssueEditor({ issues, onAdd, onUpdate }: Props) {
       <div className="flex flex-col gap-2 mb-4">
         <input
           className="border p-2 rounded"
+
           placeholder="제목"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <textarea
           className="border p-2 rounded"
+
           rows={2}
           placeholder="내용"
           value={content}
@@ -47,6 +49,7 @@ export default function IssueEditor({ issues, onAdd, onUpdate }: Props) {
           <li key={issue.id} className="flex flex-col gap-1">
             <input
               className="border p-1 rounded"
+
               value={issue.title}
               onChange={(e) =>
                 onUpdate({ ...issue, title: e.target.value })
@@ -54,6 +57,7 @@ export default function IssueEditor({ issues, onAdd, onUpdate }: Props) {
             />
             <textarea
               className="border p-1 rounded"
+
               rows={2}
               value={issue.content}
               onChange={(e) =>
