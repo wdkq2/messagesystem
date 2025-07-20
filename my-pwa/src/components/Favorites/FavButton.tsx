@@ -9,6 +9,7 @@ export default function FavButton({ item }: Props) {
   return (
     <button
       className="px-4 py-2 rounded-md bg-yellow-500 hover:bg-yellow-400 text-white font-semibold"
+
       onClick={() => add(item)}
     >
       ★ 저장
