@@ -78,6 +78,7 @@ git branch -D gh-pages
 git push origin --delete gh-pages # 원격 브랜치가 남은 경우
 ```
 
+
 GitHub 저장소의 **Settings → Pages**에서 Source를 `gh-pages` 브랜치와 `/`(root) 폴더로 지정하세요. 페이지에 README만 보인다면 이 설정을 다시 확인합니다. 설정 후 잠시 기다리면 `https://YOUR_ID.github.io/messagesystem/` 주소에서 최신 PWA를 확인할 수 있습니다. 프로젝트의 `vite.config.js`에는 이미 `base: '/messagesystem/'`가 설정되어 있습니다.
 
 ### 7. 바탕화면에 앱 설치하기
@@ -94,3 +95,4 @@ pnpm install # 의존성 변경 시
 ```
 
 작업 중이라면 `git stash`로 수정 사항을 임시 저장한 후 `git pull` 명령을 실행하세요.
+
