@@ -29,5 +29,6 @@ export default function FavButton({ content }: Props) {
         </div>
       )}
     </>
+
   )
 }

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 export interface FavoriteItem {
   id: number
   name: string
+
   content: string
 }
 
@@ -17,7 +18,6 @@ export function useFavorites() {
       if (list) setItems(list)
     })
   }, [])
-
   const add = (content: string) => {
     const nextNum = items.length + 1
     const item: FavoriteItem = {
