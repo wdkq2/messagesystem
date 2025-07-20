@@ -19,9 +19,10 @@ export default function IssueEditor({ issues, onAdd, onUpdate }: Props) {
   }
 
   return (
-    <div className="bg-white p-4 rounded shadow">
+    <div className="bg-white p-6 rounded-lg shadow">
       <h3 className="text-lg font-semibold mb-2">이슈 관리</h3>
-      <div className="flex flex-col gap-2 mb-4">
+      <div className="flex flex-col gap-3 mb-4">
+
         <input
           className="border p-2 rounded"
           placeholder="제목"
@@ -36,7 +37,8 @@ export default function IssueEditor({ issues, onAdd, onUpdate }: Props) {
           onChange={(e) => setContent(e.target.value)}
         />
         <button
-          className="self-start px-3 py-1 rounded bg-blue-600 text-white"
+          className="self-start px-4 py-2 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold"
+
           onClick={handleAdd}
         >
           추가
