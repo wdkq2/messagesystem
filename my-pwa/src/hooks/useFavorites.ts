@@ -18,6 +18,7 @@ export function useFavorites() {
       if (list) setItems(list)
     })
   }, [])
+
   const add = (content: string) => {
     const nextNum = items.length + 1
     const item: FavoriteItem = {
