@@ -19,25 +19,26 @@ cd my-pwa
 pnpm install
 ```
 
-### 3. OpenAI 프록시 URL 설정
+### 3. OpenAI API 키 설정
 
-OpenAI 키가 포함된 코드를 GitHub에 올리지 않기 위해 Cloudflare Workers 등에서 프록시를 구성합니다. `my-pwa` 폴더에 `.env` 파일을 만들고 아래 값을 입력하세요. 이 파일은 Git에 커밋되지 않습니다.
-
+OpenAI 키는 깃허브에 노출되면 안 되므로 로컬에서만 사용하는 `.env` 파일에 저장합니다. 키 문자열을 직접 포함하면 GitHub 보안 정책에 걸릴 수 있으니 **Base64** 형식으로 변환해 보관합니다.
 
 ```bash
 cp my-pwa/.env.example my-pwa/.env
-# .env 편집 후 프록시 주소 입력
+# OpenAI 키를 Base64로 변환
+echo -n "sk-..." | base64
 ```
+변환된 값을 `.env` 파일의 `VITE_OPENAI_KEY_B64` 항목에 입력하세요.
+
 
 `.env` 예시:
 
 ```env
-VITE_OPENAI_PROXY_URL=https://YOUR_WORKER.example.com/api/openai
+VITE_OPENAI_KEY_B64=BASE64_ENCODED_KEY
 VITE_OPENAI_MODEL=gpt-4o
 ```
 
 모델 명은 필요에 따라 변경할 수 있습니다.
-
 
 ### 4. 개발 서버 실행
 

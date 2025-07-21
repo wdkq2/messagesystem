@@ -22,9 +22,11 @@ If you are developing a production application, we recommend using TypeScript wi
 2. `.env` 파일 준비
    ```bash
    cp .env.example .env
-   # .env 파일을 열어 Cloudflare Workers 프록시 주소 입력
-
+   # OpenAI 키를 Base64로 변환 후 .env 파일에 입력
+   echo -n "sk-..." | base64
    ```
+   변환한 문자열을 `.env`의 `VITE_OPENAI_KEY_B64` 값으로 넣습니다.
+
 3. 개발 서버 실행
    ```bash
    pnpm dev
