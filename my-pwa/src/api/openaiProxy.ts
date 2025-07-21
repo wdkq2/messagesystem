@@ -6,7 +6,6 @@ export async function callOpenAI(prompt: string): Promise<string> {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-
     },
     body: JSON.stringify({
       model,
