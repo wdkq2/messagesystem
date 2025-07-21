@@ -26,6 +26,8 @@ If you are developing a production application, we recommend using TypeScript wi
    echo -n "sk-..." | base64
    ```
    변환한 문자열을 `.env`의 `VITE_OPENAI_KEY_B64` 값으로 넣습니다.
+   
+   Base64는 키에 포함된 특수 문자를 단순한 영문자와 숫자로 바꿔 주는 방식입니다. 보안을 철저하게 지키기 위한 암호화는 아니지만, GitHub에서 비밀 키로 탐지되는 것을 피하기 위해 사용합니다. 프로그램 실행 시 이 값을 다시 원래 키로 되돌려 사용합니다.
 
 3. 개발 서버 실행
    ```bash
