@@ -30,6 +30,7 @@ echo -n "sk-..." | base64
 ```
 변환된 값을 `.env` 파일의 `VITE_OPENAI_KEY_B64` 항목에 입력하세요.
 
+
 `.env` 예시:
 
 ```env

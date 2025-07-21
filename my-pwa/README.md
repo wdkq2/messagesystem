@@ -26,6 +26,7 @@ If you are developing a production application, we recommend using TypeScript wi
    echo -n "sk-..." | base64
    ```
    변환한 문자열을 `.env`의 `VITE_OPENAI_KEY_B64` 값으로 넣습니다.
+
 3. 개발 서버 실행
    ```bash
    pnpm dev
