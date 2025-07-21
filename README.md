@@ -23,6 +23,7 @@ pnpm install
 
 OpenAI 키가 포함된 코드를 GitHub에 올리지 않기 위해 Cloudflare Workers 등에서 프록시를 구성합니다. `my-pwa` 폴더에 `.env` 파일을 만들고 아래 값을 입력하세요. 이 파일은 Git에 커밋되지 않습니다.
 
+
 ```bash
 cp my-pwa/.env.example my-pwa/.env
 # .env 편집 후 프록시 주소 입력
@@ -36,6 +37,7 @@ VITE_OPENAI_MODEL=gpt-4o
 ```
 
 모델 명은 필요에 따라 변경할 수 있습니다.
+
 
 ### 4. 개발 서버 실행
 

@@ -23,6 +23,7 @@ If you are developing a production application, we recommend using TypeScript wi
    ```bash
    cp .env.example .env
    # .env 파일을 열어 Cloudflare Workers 프록시 주소 입력
+
    ```
 3. 개발 서버 실행
    ```bash
